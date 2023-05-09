@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Tourist_Place_App.Models.TouristPlaces>
+
+<table id="tourist_place_table" width="85%" cellspacing ="10">
+   <tr id="table header" class="table_row">
+      <th>Name</th>
+      <th>Address</th>
+      <th>
+         Rating <img id="asc" src="~/images/iconmonstr-sort-25.png" height="17" width="20">
+         <img id="dsc" src="~/images/images.png" height="17" width="20">
+      </th>
+      <th>Type</th>
+      <th>Picture</th>
+      <th>Action</th>
+   </tr>
+
+    @foreach (var item in Model)
+    {
+       <tr class="table_row" id=@Html.ValueFor(modelItem => item.Id)>
+          <td>@Html.DisplayFor(modelItem => item.Name)</td>
+          <td>@Html.DisplayFor(modelItem => item.Address)</td>
+          <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+          <td>@Html.DisplayFor(modelItem => item.Type)</td>
+          <td><img src="@item.Picture" height="80" width="80"></td>
+          <td><div class="buttons"><button class="update_button">Update</button><button class="delete_button">Delete</button></div></td>
+       </tr>
+    }
+</table>

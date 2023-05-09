@@ -1,0 +1,62 @@
+﻿<form class="form_column" id="form">
+   <div>
+      <div class="option_name">
+         <label for="name">Name:<span class="required">*</span></label>
+      </div>
+      <div class="option_value" id="name_field">
+         <input type="text" id="name" name="name" placeholder="Enter Name" required />
+      </div>
+      <div class="required_field" id="name_required"><b>Name Required</b></div>
+   </div>
+   <div>
+      <div class="option_name">
+         <label for="address">Address:<span class="required">*</span></label>
+      </div>
+      <div class="option_value" id="address_field">
+         <input type="text" id="address" name="address" maxlength=50 placeholder="Enter Address" required />
+      </div>
+      <div class="required_field" id="address_required"><b>Address Required</b></div>
+   </div>
+   <div>
+      <div class="option_name">
+         <label for="rating">Rating:</label>
+      </div>
+      <div class="option_value" id="rating_field">
+         <input type="number" id="rating" name="rating" min="1" max="5" value="1" placeholder="Enter Rating">
+      </div>
+      <div class="required_field" id="rating_required"><b>Rating Required(Range 1 to 5)</b></div>
+   </div>
+   <div>
+      <div class="option_name">
+         <label for="type">Type:</label>
+      </div>
+      <div class="option_value">
+         <select id="type" name="type">
+            <option value="Beach">Beach</option>
+            <option value="Hills">Hills</option>
+            <option value="Fountain">Fountain</option>
+            <option value="Landmark">Landmark</option>
+         </select>
+      </div>
+   </div>
+   <div>
+      <div class="option_name">
+         <label for="picture">Picture:</label>
+      </div>
+      <div class="option_value">
+         <span> <input type="file" id="img" name="img" accept="image/*"> </span>
+         <div class="image_load" id="picked_image">
+            <img id="loaded_image" alt="Tourist Place" width="25"
+                 height="25">
+            <img id="choose_again" src="~/images/check-marks.jpg" alt="Tourist Place Logo" width="25" height="25">
+         </div>
+      </div>
+   </div>
+   <div>
+      <div class="form_buttons_alignment">
+         <input type="button" id="Submit" class="submit" value="Submit" data-id="0" />
+         <span class="padding-button"></span>
+         <input type="reset" id="Reset" value="Reset" />
+      </div>
+   </div>
+</form>

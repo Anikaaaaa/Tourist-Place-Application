@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Tourist_Place_App.Models.TouristPlaces>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+   <link rel="stylesheet" href="~/css/Style.css" asp-append-version="true" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   <script src="~/js/scripts.js"></script>
+</head>
+
+<body>
+   <div class="page_content_box">
+      <div>
+         <h5 align="center" style="font-family:verdana" id="form_header"><b>Add a New Tourist Place</b></h5>
+            @{
+                await Html.RenderPartialAsync("_FormPartialView");
+            }
+         <div align="center" class="back_link">
+            <a href="#tourist_place_table">
+               <b>Back to Tourist Place List</b>
+            </a>
+         </div>
+      </div>
+
+      <div>
+         <h3 align="center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Tourist Place Table</h3>
+         <div class=table_margin>
+            <div style="overflow-x:auto">
+                    @{
+                        await Html.RenderPartialAsync("_PartialView", Model);
+                    }
+            </div>
+            <div>
+               <button id="create" class="create">
+                  <a href="#form_header"
+                     style="text-decoration:none; color: white">
+                     Create
+                     New Tourist Place
+                  </a>
+               </button>
+            </div>
+
+         </div>
+      </div>
+      <div id="nothing found" class="nothing">
+         <h3 align="center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">No Places to Show</h3>
+      </div>
+   </div>
+</body>
